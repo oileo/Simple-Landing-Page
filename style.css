@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+	--primary: #006400;
+	--secondary: #F7F7F7;
+	--details: #FFD700;
+	--text: #2F2F2F;
+}
+
+* {
+	color: var(--text);
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial;
+	text-decoration: none;
+	scroll-behavior: smooth;
+	outline: none;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	height: 100svh;
+}
+
+header {
+	background-image: url(./images/banner.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+header h4 {
+	width: 100%;
+	text-align: center;
+}
+
+header #header-content {
+	width: 100%;
+	height: 100%;
+	backdrop-filter: blur(3px);
+	background-color: #0008;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+
+	animation: fade-in 1s ease-in-out;
+}
+
+header #header-toolbar {
+	position: relative;
+	backdrop-filter: blur(5px);
+	padding: 10px;
+	background-color: #000c;
+	display: flex;
+	box-shadow: 0px 0px 10px #000;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header #header-toolbar * {
+	color: #fff;
+}
+
+header #header-toolbar a {
+	padding: 7px 15px;
+	border: 2px solid #fff;
+	transition: .5s;
+}
+
+header #header-toolbar a:active {
+	background-color: #fff;
+	color: var(--text);
+	box-shadow: 0px 0px 10px #fff5;
+}
+
+#header-content * {
+	color: #fff;
+	text-shadow: 0px 0px 10px #fff5;
+}
+
+#header-content h1 {
+	font-size: 40pt;
+	animation: rotate-in 2s ease-in-out;
+}
+
+#header-content h4 {
+	animation: join-in 2s ease-in-out;
+}
+
+section {
+	background-color: var(--secondary);
+	padding: 20px;
+}
+
+.align-h {
+	display: flex;
+	align-items: center;
+}
+
+.align-h * {
+	flex: 1;
+}
+
+.align-h h1 {
+	text-align: center;
+	font-size: 30px;
+}
+
+.section-content {
+	background-color: var(--primary);
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	transition: .5s;
+}
+
+.section-content:hover {
+	transform: translateY(-10px);
+}
+
+.section-content h1 {
+	display: none;
+}
+
+.section-content * {
+	color: #fff;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+.list h1 {
+	font-size: 30pt;
+}
+
+.list ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.list ul li {
+	display: flex;
+	height: 100px;
+	gap: 20px;
+	align-items: center;
+}
+
+.list ul li img {
+	width: 100px;
+	border-radius: 50%;
+}
+
+#form {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+}
+
+#form form:hover {
+	transform: scale(1.05);
+}
+
+#form form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	background-color: var(--primary);
+	padding: 20px;
+	border-radius: 3px;
+	box-shadow: 0px 0px 10px #0006;
+	transition: .5s;
+}
+
+#form form input, #form form textarea {
+	padding: 10px;
+	background-color: #0005;
+	border: 0;
+	color: #fff;
+	border: 3px;
+}
+
+#form form input::placeholder, #form form textarea::placeholder {
+	color: #ccc;
+}
+
+#form form textarea {
+	resize: none;
+	height: 150px;
+}
+
+#form form * {
+	color: #fff;
+}
+
+#form form button {
+	cursor: pointer;
+	background-color: var(--details);
+	border: none;
+	padding: 10px;
+	border-radius: 3px;
+	color: #111;
+	font-size: 15px;
+}
+
+footer {
+	background-color: var(--primary);
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+footer * {
+	color: #fff;
+}
+
+footer #links {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	list-style: none;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity:  0;
+	}
+}
+
+@keyframes join-in {
+	0% {
+		letter-spacing: 5px;
+	}
+}
+
+@keyframes rotate-in {
+	0% {
+		transform: translateY(20px) rotate(2deg);
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.align-h {
+		flex-direction: column;
+	}
+
+	section {
+		padding: 10px;
+	}
+
+	.section-content h1 {
+		display: block;
+	}
+
+	.sec h1 {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	#header-toolbar {
+		display: none!important;
+	}
+}
+
+hr {
+	padding: 40px;
+	border: 0;
+	background-color: var(--secondary);
+}
